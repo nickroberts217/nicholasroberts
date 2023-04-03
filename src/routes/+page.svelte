@@ -17,14 +17,6 @@
 	};
 </script>
 
-<svelte:head>
-	<style>
-		body {
-			font-family: 'Delius', sans-serif;
-		}
-	</style>
-</svelte:head>
-
 <nav class="navbar is-dark">
 	<div class="navbar-brand">
 		<a class="navbar-item" href="https://github.com/nickroberts217" target="_blank">
@@ -81,9 +73,9 @@
 							<a href="https://www.roux.nyc" target="_blank"><img src={rouxScreenshot} /></a>
 						</figure>
 					</div>
-					<div class="card-content has-background-grey">
+					<div class="card-content has-background-grey-light">
 						<div class="content">
-							<h4 class="has-text-white">Roux.nyc</h4>
+							<h4>Roux.nyc</h4>
 							<div class="tags are-small">
 								<span class="tag is-white is-rounded">Python</span>
 								<span class="tag is-white is-rounded">Django REST Framework</span>
@@ -226,7 +218,7 @@
 <nav class="navbar is-light is-fixed-bottom">
 	<div class="navbar-brand">
 		<p class="navbar-item is-size-7">
-			&copy; 2023&emsp;Built with&nbsp;
+			&copy; 2023&ensp;Built with&nbsp;
 			<a href="https://kit.svelte.dev" target="_blank">SvelteKit</a>
 		</p>
 	</div>
