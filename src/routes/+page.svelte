@@ -73,17 +73,17 @@
 		</ul>
 	</div>
 	{#if showProjects}
-		<div class="columns is-multiline" in:fly={{ duration: 1000 }}>
+		<div class="columns is-multiline" in:fly={{ duration: 500 }}>
 			<div class="column is-one-quarter">
 				<div class="card">
 					<div class="card-image">
 						<figure class="image is-4by3">
-							<a href="https://www.rouxapp.nyc" target="_blank"><img src={rouxScreenshot} /></a>
+							<a href="https://www.roux.nyc" target="_blank"><img src={rouxScreenshot} /></a>
 						</figure>
 					</div>
 					<div class="card-content has-background-grey">
 						<div class="content">
-							<h4 class="has-text-white">Rouxapp.nyc</h4>
+							<h4 class="has-text-white">Roux.nyc</h4>
 							<div class="tags are-small">
 								<span class="tag is-white is-rounded">Python</span>
 								<span class="tag is-white is-rounded">Django REST Framework</span>
@@ -99,7 +99,7 @@
 		</div>
 	{/if}
 	{#if showExperience}
-		<article class="media mb-6" in:fly={{ duration: 1000 }}>
+		<article class="media mb-6" in:fly={{ duration: 500 }}>
 			<figure class="media-left">
 				<p class="image is-64x64">
 					<img class="is-rounded" src={me} />
@@ -116,7 +116,7 @@
 				</div>
 			</div>
 		</article>
-		<div class="columns" in:fly={{ duration: 1000 }}>
+		<div class="columns" in:fly={{ duration: 500 }}>
 			<div class="column is-4">
 				<p class="subtitle has-text-info-dark">5+ yrs</p>
 				<div class="tags are-small">
@@ -154,7 +154,7 @@
 	{/if}
 	{#if showContact}
 		{#if showInfoMessage}
-			<div class="mb-5" in:fly={{ duration: 1000 }}>
+			<div class="mb-5" in:fly={{ duration: 500 }}>
 				<article class="message is-small is-info">
 					<div class="message-body">
 						Message was not sent, probably because the database is offline. Please connect with me
@@ -163,7 +163,7 @@
 				</article>
 			</div>
 		{/if}
-		<form on:submit|preventDefault={handleSubmit} autocomplete="off" in:fly={{ duration: 1000 }}>
+		<form on:submit|preventDefault={handleSubmit} autocomplete="off" in:fly={{ duration: 500 }}>
 			<div class="field is-horizontal">
 				<div class="field-label is-normal">
 					<label class="label">From</label>
