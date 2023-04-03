@@ -73,7 +73,7 @@
 		</ul>
 	</div>
 	{#if showProjects}
-		<div class="columns is-multiline">
+		<div class="columns is-multiline" in:fly={{ duration: 1000 }}>
 			<div class="column is-one-quarter">
 				<div class="card">
 					<div class="card-image">
@@ -99,26 +99,24 @@
 		</div>
 	{/if}
 	{#if showExperience}
-		<div class="mb-6">
-			<article class="media">
-				<figure class="media-left" in:fly={{ duration: 1000 }}>
-					<p class="image is-64x64">
-						<img class="is-rounded" src={me} />
+		<article class="media mb-6" in:fly={{ duration: 1000 }}>
+			<figure class="media-left">
+				<p class="image is-64x64">
+					<img class="is-rounded" src={me} />
+				</p>
+			</figure>
+			<div class="media-content">
+				<div class="content">
+					<p>
+						In March I left <a href="https://www.joinforma.com" target="_blank">Forma</a>
+						to pursue freelancing full time. For a limited time I am charging a lower-than-average hourly
+						or fixed rate, dependent on technologies used. Please reach out to me on the next tab, or
+						connect with me on LinkedIn. Thanks.
 					</p>
-				</figure>
-				<div class="media-content">
-					<div class="content">
-						<p>
-							In March I left <a href="https://www.joinforma.com" target="_blank">Forma</a>
-							to pursue freelancing full time. For a limited time I am charging a lower-than-average
-							hourly or fixed rate, dependent on technologies used. Please reach out to me on the next
-							tab, or connect with me on LinkedIn. Thanks.
-						</p>
-					</div>
 				</div>
-			</article>
-		</div>
-		<div class="columns">
+			</div>
+		</article>
+		<div class="columns" in:fly={{ duration: 1000 }}>
 			<div class="column is-4">
 				<p class="subtitle has-text-info-dark">5+ yrs</p>
 				<div class="tags are-small">
@@ -156,7 +154,7 @@
 	{/if}
 	{#if showContact}
 		{#if showInfoMessage}
-			<div class="mb-5">
+			<div class="mb-5" in:fly={{ duration: 1000 }}>
 				<article class="message is-small is-info">
 					<div class="message-body">
 						Message was not sent, probably because the database is offline. Please connect with me
@@ -165,7 +163,7 @@
 				</article>
 			</div>
 		{/if}
-		<form on:submit|preventDefault={handleSubmit} autocomplete="off">
+		<form on:submit|preventDefault={handleSubmit} autocomplete="off" in:fly={{ duration: 1000 }}>
 			<div class="field is-horizontal">
 				<div class="field-label is-normal">
 					<label class="label">From</label>
