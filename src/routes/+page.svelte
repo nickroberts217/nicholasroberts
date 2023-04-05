@@ -5,7 +5,7 @@
 	import rouxScreenshot from '$lib/assets/roux.png';
 
 	let showProjects = true;
-	let showExperience = false;
+	let showAbout = false;
 	let showContact = false;
 	let name = '';
 	let email = '';
@@ -39,25 +39,25 @@
 				<a
 					on:click={() => {
 						showProjects = true;
-						showExperience = false;
+						showAbout = false;
 						showContact = false;
 					}}>Projects</a
 				>
 			</li>
-			<li class:is-active={showExperience === true}>
+			<li class:is-active={showAbout === true}>
 				<a
 					on:click={() => {
 						showProjects = false;
-						showExperience = true;
+						showAbout = true;
 						showContact = false;
-					}}>Experience</a
+					}}>About</a
 				>
 			</li>
 			<li class:is-active={showContact === true}>
 				<a
 					on:click={() => {
 						showProjects = false;
-						showExperience = false;
+						showAbout = false;
 						showContact = true;
 					}}>Contact</a
 				>
@@ -66,31 +66,34 @@
 	</div>
 	{#if showProjects}
 		<div class="columns is-multiline" in:fly={{ duration: 500 }}>
-			<div class="column is-one-quarter">
+			<div class="column is-one-third">
 				<div class="card">
-					<div class="card-image">
+					<a class="card-image" href="https://www.roux.coffee" target="_blank">
 						<figure class="image is-4by3">
-							<a href="https://www.roux.nyc" target="_blank"><img src={rouxScreenshot} /></a>
+							<img src={rouxScreenshot} />
 						</figure>
-					</div>
-					<div class="card-content has-background-grey-light">
-						<div class="content">
-							<h4>Roux.nyc</h4>
+						<div
+							class="is-overlay py-2"
+							style="bottom: auto; background-color: rgba(0, 0, 0, 0.5);"
+						>
+							<p class="subtitle has-text-centered has-text-white">Roux.coffee</p>
+						</div>
+						<div class="is-overlay p-2" style="top: auto; background-color: rgba(0, 0, 0, 0.5);">
 							<div class="tags are-small">
-								<span class="tag is-white is-rounded">Python</span>
-								<span class="tag is-white is-rounded">Django REST Framework</span>
-								<span class="tag is-white is-rounded">GCP</span>
-								<span class="tag is-white is-rounded">PostgreSQL</span>
-								<span class="tag is-white is-rounded">Docker</span>
-								<span class="tag is-white is-rounded">Alpine.js</span>
+								<span class="tag">Python</span>
+								<span class="tag">Django REST Framework</span>
+								<span class="tag">PostgreSQL</span>
+								<span class="tag">Docker</span>
+								<span class="tag">Google Places API</span>
+								<span class="tag">Alpine.js</span>
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 			</div>
 		</div>
 	{/if}
-	{#if showExperience}
+	{#if showAbout}
 		<article class="media mb-6" in:fly={{ duration: 500 }}>
 			<figure class="media-left">
 				<p class="image is-64x64">
@@ -112,34 +115,34 @@
 			<div class="column is-4">
 				<p class="subtitle has-text-info-dark">5+ yrs</p>
 				<div class="tags are-small">
-					<span class="tag is-info is-light is-rounded">Python</span>
-					<span class="tag is-info is-light is-rounded">Django REST Framework</span>
-					<span class="tag is-info is-light is-rounded">Django</span>
-					<span class="tag is-info is-light is-rounded">PostgreSQL</span>
-					<span class="tag is-info is-light is-rounded">Docker</span>
-					<span class="tag is-info is-light is-rounded">Redis</span>
-					<span class="tag is-info is-light is-rounded">HTML5</span>
-					<span class="tag is-info is-light is-rounded">CSS3</span>
-					<span class="tag is-info is-light is-rounded">Bootstrap</span>
+					<span class="tag is-info is-light">Python</span>
+					<span class="tag is-info is-light">Django REST Framework</span>
+					<span class="tag is-info is-light">Django</span>
+					<span class="tag is-info is-light">PostgreSQL</span>
+					<span class="tag is-info is-light">Docker</span>
+					<span class="tag is-info is-light">Redis</span>
+					<span class="tag is-info is-light">HTML5</span>
+					<span class="tag is-info is-light">CSS3</span>
+					<span class="tag is-info is-light">Bootstrap</span>
 				</div>
 			</div>
 			<div class="column is-4">
 				<p class="subtitle has-text-warning-dark">2-4 yrs</p>
 				<div class="tags are-small">
-					<span class="tag is-warning is-light is-rounded">Google Cloud Platform</span>
-					<span class="tag is-warning is-light is-rounded">MongoDB</span>
-					<span class="tag is-warning is-light is-rounded">TypeScript</span>
-					<span class="tag is-warning is-light is-rounded">Nest.js</span>
-					<span class="tag is-warning is-light is-rounded">Alpine.js</span>
-					<span class="tag is-warning is-light is-rounded">Bulma</span>
+					<span class="tag is-warning is-light">Google Cloud Platform</span>
+					<span class="tag is-warning is-light">MongoDB</span>
+					<span class="tag is-warning is-light">TypeScript</span>
+					<span class="tag is-warning is-light">Nest.js</span>
+					<span class="tag is-warning is-light">Alpine.js</span>
+					<span class="tag is-warning is-light">Bulma</span>
 				</div>
 			</div>
 			<div class="column is-4">
 				<p class="subtitle has-text-danger-dark">&lt; 1 yr</p>
 				<div class="tags are-small">
-					<span class="tag is-danger is-light is-rounded">K8s</span>
-					<span class="tag is-danger is-light is-rounded">Svelte.js</span>
-					<span class="tag is-danger is-light is-rounded">Tailwind CSS</span>
+					<span class="tag is-danger is-light">K8s</span>
+					<span class="tag is-danger is-light">Svelte.js</span>
+					<span class="tag is-danger is-light">Tailwind CSS</span>
 				</div>
 			</div>
 		</div>
@@ -207,7 +210,7 @@
 				<div class="field-body">
 					<div class="field">
 						<div class="control">
-							<button class="button is-link"> Send message </button>
+							<button class="button is-link">Send message</button>
 						</div>
 					</div>
 				</div>
