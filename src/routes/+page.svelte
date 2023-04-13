@@ -103,26 +103,38 @@
 			<div class="media-content">
 				<div class="content">
 					<p>
-						In March I left <a href="https://www.joinforma.com" target="_blank">Forma</a>
-						to pursue freelancing full time. For a limited time I am charging a lower-than-average hourly
-						or fixed rate, dependent on technologies used. Please reach out to me on the next tab, or
-						connect with me on LinkedIn. Thanks.
+						Primarily backend, my favorite tech stack is Python-Django. My most recent position at <a
+							href="https://www.joinforma.com"
+							target="_blank">Forma</a
+						> required me to learn Express.js so I've spent a couple of years in the Node.js world too.
+						I like using frameworks to ease the development process, most notably Django REST Framework
+						and Nest.js. I prefer them because they have built-in security, queueing, pagination, and
+						other useful tools. Having previously worked for series B startups, I am well-versed in completing
+						tasks within tight deadlines.
+					</p>
+					<p>
+						When I'm not coding some of my hobbies include playing guitar, photography, brewing
+						beer, and playing soccer. If you would like to get in touch, please contact me on the
+						next tab or connect with me on <a
+							href="https://www.linkedin.com/in/nick-roberts-b6b18992"
+							target="_blank">LinkedIn</a
+						>.
 					</p>
 				</div>
 			</div>
 		</article>
 		<div class="columns" in:fly={{ duration: 500 }}>
 			<div class="column is-4">
-				<p class="subtitle has-text-info-dark">5+ yrs</p>
+				<p class="subtitle has-text-info-dark">6+ yrs</p>
 				<div class="tags are-small">
 					<span class="tag is-info is-light">Python</span>
-					<span class="tag is-info is-light">Django REST Framework</span>
 					<span class="tag is-info is-light">Django</span>
+					<span class="tag is-info is-light">Django REST Framework</span>
 					<span class="tag is-info is-light">PostgreSQL</span>
-					<span class="tag is-info is-light">Docker</span>
+					<span class="tag is-info is-light">Celery</span>
 					<span class="tag is-info is-light">Redis</span>
-					<span class="tag is-info is-light">HTML5</span>
-					<span class="tag is-info is-light">CSS3</span>
+					<span class="tag is-info is-light">Docker</span>
+					<span class="tag is-info is-light">Git</span>
 					<span class="tag is-info is-light">Bootstrap</span>
 				</div>
 			</div>
@@ -130,18 +142,19 @@
 				<p class="subtitle has-text-warning-dark">2-4 yrs</p>
 				<div class="tags are-small">
 					<span class="tag is-warning is-light">Google Cloud Platform</span>
-					<span class="tag is-warning is-light">MongoDB</span>
 					<span class="tag is-warning is-light">TypeScript</span>
 					<span class="tag is-warning is-light">Nest.js</span>
-					<span class="tag is-warning is-light">Alpine.js</span>
+					<span class="tag is-warning is-light">Express.js</span>
+					<span class="tag is-warning is-light">MongoDB</span>
 					<span class="tag is-warning is-light">Bulma</span>
 				</div>
 			</div>
 			<div class="column is-4">
 				<p class="subtitle has-text-danger-dark">&lt; 1 yr</p>
 				<div class="tags are-small">
-					<span class="tag is-danger is-light">K8s</span>
 					<span class="tag is-danger is-light">Svelte.js</span>
+					<span class="tag is-danger is-light">K8s</span>
+					<span class="tag is-danger is-light">Alpine.js</span>
 					<span class="tag is-danger is-light">Tailwind CSS</span>
 				</div>
 			</div>
@@ -152,8 +165,11 @@
 			<div class="mb-5" in:fly={{ duration: 500 }}>
 				<article class="message is-small is-info">
 					<div class="message-body">
-						Message was not sent, probably because the database is offline. Please connect with me
-						on LinkedIn instead.
+						Message was not sent, probably because the database is offline (Cloud SQL is
+						expensive!). Please connect with me on <a
+							href="https://www.linkedin.com/in/nick-roberts-b6b18992"
+							target="_blank">LinkedIn</a
+						> instead.
 					</div>
 				</article>
 			</div>
@@ -183,23 +199,14 @@
 				</div>
 			</div>
 			<div class="field is-horizontal">
-				<div class="field-label is-normal">
-					<label class="label">How can I help?</label>
+				<div class="field-label">
+					<!-- Left empty for spacing -->
 				</div>
 				<div class="field-body">
 					<div class="field">
 						<div class="control">
-							<textarea
-								class="textarea"
-								placeholder="Explain your project in depth"
-								required
-								bind:value={message}
-							/>
+							<textarea class="textarea" placeholder="Optional message" bind:value={message} />
 						</div>
-						<p class="help">
-							What are you building? What are your requirements? Will this project be ongoing? Do
-							you need designs?
-						</p>
 					</div>
 				</div>
 			</div>
@@ -210,7 +217,7 @@
 				<div class="field-body">
 					<div class="field">
 						<div class="control">
-							<button class="button is-link">Send message</button>
+							<button class="button is-light">Send</button>
 						</div>
 					</div>
 				</div>
