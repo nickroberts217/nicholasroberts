@@ -1,5 +1,5 @@
 <section class="hero">
-	<div class="hero-body pb-0">
+	<div class="hero-body pb-1">
 		<h1 class="title is-1">Nicholas Roberts</h1>
 		<h6 class="subtitle is-6">Backend Engineer | Django Developer</h6>
   	</div>
@@ -13,7 +13,7 @@
 				<p>Freelancing</p>
 			</div>
 			<div class="column">
-				<p>Full stack development of a Django web application that manages over 30 senior living facilities in the Midwest. Completed projects include integrating Twilio SMS notifications and a significant rewrite of the frontend to a modern JS framework.</p>
+				<p>Full stack development of a Django web application that manages over 30 senior living facilities in the Midwest. Completed projects include integrating Twilio SMS notifications and a significant overhaul of the frontend to use a more modern JS framework.</p>
 			</div>
 		</div>
 		<div class="columns is-mobile">
@@ -40,7 +40,7 @@
 				<a href="https://www.roux.coffee" target="_blank">Roux</a>
 			</div>
 			<div class="column">
-				<p>Utilizes crowdsourcing and Google's Places API to verify amenities offered in food and drink establishments. Started with coffee shops in NYC. Down currently due to the hefty cost of GCP but the code is available <a href="https://github.com/nickroberts217" target="_blank">here</a>.</p>
+				<p>Utilizes crowdsourcing and Google's Places API to verify amenities offered in food and drink establishments. Started with coffee shops in NYC. Down currently but the code is available <a href="https://github.com/nickroberts217" target="_blank">here</a>.</p>
 			</div>
 		</div>
 		<br>
