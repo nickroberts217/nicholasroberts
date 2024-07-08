@@ -1,71 +1,107 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+
+	let now = new Date();
+	let options = [
+		'Allison',
+		'Anastasia',
+		'Brendan',
+		'Celeste',
+		'Cole',
+		'Connor',
+		'Corey',
+		'Ella',
+		'Grace',
+		'Kevin',
+		'Luke',
+		'Nick',
+		'Yael',
+	];
+	let excluded = [];
+	let goalies = [];
+	let needed = 2;
+
+	const addToExcluded = async (index) => {
+		const option = options[index];
+		excluded.push(option);
+		excluded = excluded.sort();
+		options.splice(index, 1);
+		options = options;
+	};
+
+	const removeFromExcluded = async (index) => {
+		const exclude = excluded[index];
+		options.push(exclude);
+		options = options.sort();
+		excluded.splice(index, 1);
+		excluded = excluded;
+	};
+
+	const runGen = async (amount) => {
+		const optionsCopy = [...options];
+  		for (let i = optionsCopy.length - 1; i > 0; i--) {
+    			const j = Math.floor(Math.random() * (i + 1));
+    			const temp = optionsCopy[i];
+    			optionsCopy[i] = optionsCopy[j];
+    			optionsCopy[j] = temp;
+  		}
+		goalies = [optionsCopy[0], optionsCopy[1]];
+
+	};
+</script>
+
 <section class="hero">
 	<div class="hero-body pb-1">
-		<h1 class="title is-1">Nicholas Roberts</h1>
-		<h6 class="subtitle is-6">Backend Engineer | Django Developer</h6>
+		<h1 class="title is-1">GoalieGen&trade; by C2C</h1>
+		<h4 class="subtitle is-6">{now.toDateString()}</h4>
   	</div>
-</section>
-<section class="hero">
 	<div class="hero-body">
-		<h4 class="subtitle is-4">Recent Experience</h4>
-		<hr>
-		<div class="columns is-mobile">
-			<div class="column is-one-third-mobile is-2-tablet">
-				<p>Freelancing</p>
-			</div>
-			<div class="column">
-				<p>Full stack development of a Django web application that manages over 30 senior living facilities in the Midwest. Completed projects include integrating Twilio SMS notifications and a significant overhaul of the frontend to use a more modern JS framework.</p>
-			</div>
-		</div>
-		<div class="columns is-mobile">
-			<div class="column is-one-third-mobile is-2-tablet">
-				<a href="https://www.joinforma.com" target="_blank">Forma</a>
-			</div>
-			<div class="column">
-				<p>One of five engineers on the Core Product team. Key accomplishment is architecting, building, and deploying a Node.js microservice that served as the API of the HSA investments feature. Largely event-driven by message queues and GCP publishers/subscribers.</p>
-			</div>
-		</div>
-		<div class="columns is-mobile">
-			<div class="column is-one-third-mobile is-2-tablet">
-				<a href="https://www.teampay.co" target="_blank">Teampay</a>
-			</div>
-			<div class="column">
-				<p>One of the early hires. API development and integrations. Key accomplishment is the addition of purchase orders as a payment option, which attracted larger mid-market customers that needed to track sizeable purchases.</p>
-			</div>
+		<h4 class="subtitle is-4">Team Members</h4>
+		<div class="tags">
+			{#each options as option, index (index)}
+			<span class="tag is-medium" on:click={() => addToExcluded(index)}>
+				{option}
+				<button class="delete is-small"></button>
+			</span>
+			{/each}
 		</div>
 		<br>
-		<h4 class="subtitle is-4">Side Projects</h4>
-		<hr>
-		<div class="columns is-mobile">
-			<div class="column is-one-third-mobile is-2-tablet">
-				<a href="https://www.roux.coffee" target="_blank">Roux</a>
+		<h4 class="subtitle is-4">Absent</h4>
+		{#if excluded.length > 0}
+			<div class="tags">
+				{#each excluded as exclude, index (index)}
+				<span class="tag is-medium is-danger" on:click={() => removeFromExcluded(index)}>
+					{exclude}
+					<button class="delete is-small"></button>
+				</span>
+				{/each}
 			</div>
-			<div class="column">
-				<p>Utilizes crowdsourcing and Google's Places API to verify amenities offered in food and drink establishments. Started with coffee shops in NYC. Down currently but the code is available <a href="https://github.com/nickroberts217" target="_blank">here</a>.</p>
-			</div>
-		</div>
+		{:else}
+		<div class="tags">No one</div>
+		{/if}
 		<br>
-		<h4 class="subtitle is-4">Technical Skills</h4>
-		<hr>
-		<div class="columns is-mobile">
-			<div class="column is-one-third-mobile is-2-tablet">
-				<p>Backend</p>
+		<h4 class="subtitle is-4">Number of goalies needed</h4>
+		<form on:submit|preventDefault={runGen} autocomplete="off">
+			<div class="field is-grouped">
+				<div class="control is-expanded">
+					
+					<input class="input" type="number" required bind:value={needed} />
+				</div>
+				<div class="control">
+					<button class="button is-rounded" type="submit">Run</button>
+				</div>
 			</div>
-			<div class="column">
-				<p>Python, Django, and PostgreSQL. A few years with MERN. Experience with both GCP and AWS.</p>
-			</div>
-		</div>
-		<div class="columns is-mobile">
-			<div class="column is-one-third-mobile is-2-tablet">
-				<p>Web</p>
-			</div>
-			<div class="column">
-				<p>HTML, CSS, and Django. Recently some Alpine.js and Svelte.js.</p>
-			</div>
-		</div>
+		</form>
+		<br>
+		{#if goalies.length > 0 && needed === 2}
+		<p>Goalies: {goalies.join(', ')}</p>
+		{:else if goalies.length > 0 && needed === 1}
+		<p>Goalies: {goalies[0]}</p>
+		{/if}
 	</div>
 </section>
 <section class="hero">
 	<div class="hero-body mt-4">
-		<p class="is-size-7">&copy; 2023</p>
+		<p class="is-size-7">&copy; 2024</p>
 	</div>
 </section>
